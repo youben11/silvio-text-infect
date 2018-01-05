@@ -42,6 +42,10 @@ int main(int argc, char** argv){
 
     virus = silvio_infect_64(elf, size_e, payload, size_p);
     write(fd_v, virus, size_e + PAGE_SZ64);
+    
+    free(elf);
+    free(payload);
+    free(virus);
 
     close(fd_e);
     close(fd_p);
